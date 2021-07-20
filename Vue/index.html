@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Curso Basico de Vue.js | Platzi</title>
+    <title>Curso de Vue</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -15,11 +14,17 @@
         v-bind:src="img"
         alt="name"
       />
+
+      <!-- Mostrar titulo con computed -->
+
       <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
         {{ title }}
         <span v-if="changePercent > 0">👍</span>
         <span v-else-if="changePercent < 0">👎</span>
         <span v-else>👩‍🦱</span>
+
+        <!-- boton mostrar precios con cambio de emoji -->
+
         <span v-on:click="toggleShowPrices">
           Ver precios{{ showPrices ? '👼' : '👮‍♀️' }}
         </span>
@@ -27,6 +32,8 @@
       <input type="number" v-model="value" />
       <span> {{ convertedValue }} </span>
       <ul v-show="showPrices">
+        <!-- Mostrar precios de un color dependiendo los precios -->
+
         <li
           class="uppercase"
           v-bind:class="{ orange: p.value == prices, red: p.value < prices, green: p.value > prices }"

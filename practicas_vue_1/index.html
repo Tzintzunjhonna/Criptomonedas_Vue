@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso Basico de Vue.js | Platzi</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Mi ejercicio de platzi 🙏</h1>
+
+      <!-- Campos para llenar -->
+      <input
+        type="text"
+        v-model="curso"
+        placeholder="Ingresa el nombre del curso"
+      />
+      <br />
+      <input
+        type="number"
+        v-model="horas"
+        placeholder="ingresa las horas del curso"
+      />
+      <br />
+      <!-- Boton para Guardar-->
+      <span v-on:click="saveCurso">Guardar</span>
+
+      <br />
+      <!-- Se  crea una lista para extraer con un for el array  -->
+      <ul>
+        <li v-for="(c, i) in arraycurso">
+          {{i}} - {{ c.curso }} - {{ c.horas }}
+        </li>
+      </ul>
+
+      <!-- Mostar La cantidad de array-->
+      <h2>Total de horas ✔</h2>
+      <h3>Son {{totalHoras}} horas aprendidas en Platzi 💚</h3>
+
+      <h4 v-if="totalHoras < 10">Debes aprender más 🖤</h4>
+      <h4 v-else-if="totalHoras > 50">Eres un puto master🎉</h4>
+      <h4 v-else>Vas por una buena ruta😎</h4>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

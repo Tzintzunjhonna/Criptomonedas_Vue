@@ -24,10 +24,13 @@ new Vue ({
   },
 
   computed:{
+
+    //Mostrar el nombre del Bitcoin
     title () {
       return `${this.name} - ${this.symbol}`
     },
 
+    // Convertir el valor ingresado a el valor de bitcoin
     convertedValue () {
       if (!this.value) {
         return 0
@@ -37,6 +40,7 @@ new Vue ({
     }
   },
 
+  // trackear o rastrear propiedades en tiempo real, movimientos que se hacen
   watch: {
     showPrices (newVal, oldVal) {
       console.log(newVal, oldVal)
@@ -44,9 +48,11 @@ new Vue ({
   },
 
   methods:{
+    //Mostrar lista de los precios
     toggleShowPrices () {
       this.showPrices = !this.showPrices
 
+      // Convertir el color de background a su formato reverso
       this.color = this.color.split('').reverse().join('')
     }
   }
