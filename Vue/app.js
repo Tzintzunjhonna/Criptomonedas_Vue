@@ -40,8 +40,17 @@ Vue.component('CoinDetail', {
     }
   },
 
+  //Slots
+  created (){
+    console.log('created coin..')
+  },
+
+  mounted () {
+  console.log('mounted coin..')
+
+  },
+
   template:
-  
   `
   <div>
       <img
@@ -117,7 +126,14 @@ new Vue ({
     }
   },
 
+  created (){
+    console.log('created..')
+  },
 
+  mounted () {
+  console.log('mounted..')
+
+  },
 
 
 

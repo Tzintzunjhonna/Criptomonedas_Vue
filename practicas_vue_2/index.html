@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso Basico de Vue.js | Platzi</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Mi ejercicio de platzi 2 🙏</h1>
+
+      <!--
+        bind:title es para trarer el titulo del elemento hijo
+        v-show:mostrarmodal es evento para al dar click muestre el modal
+        v-on:cierra-modal es para cerrar el modal
+      -->
+      <modal
+        v-bind:title="title"
+        v-show:mostrarmodal="mostrarmodal"
+        v-on:cierra-modal="mostrarModal"
+      >
+        <!--
+        template es para poder agregar codigo html a elemento padre
+        v-slot:cuerpo-modal es para identificar el slot
+      -->
+        <template v-slot:cuerpo-modal>
+          <h1>Esta muy chingon esto</h1>
+        </template>
+      </modal>
+
+      <!--
+        v-on:click es para mostrar el modal
+      -->
+      <button v-on:click="mostrarModal">Click me..</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
