@@ -10,6 +10,12 @@
     <div id="app" v-bind:style="{ backgroundColor: '#' + color }">
       <!-- Remplazar todo (propiedades) por conponente  realizado -->
       <coin-detail v-on:change-color="updateColor" v-bind:coin="btc">
+        <template v-slot:text>
+          <p>Lorem ipson</p>
+        </template>
+        <template v-slot:link>
+          <a href="#">Link!!</a>
+        </template>
       </coin-detail>
     </div>
 
