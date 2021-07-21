@@ -18,6 +18,8 @@ Vue.component('CoinDetail', {
 
     toggleShowPrices () {
       this.showPrices = !this.showPrices
+      this.$emit('change-color', 
+      this.showPrices ? 'FF96C8' : '3D3D3D')
     }
   },
 
@@ -107,7 +109,7 @@ new Vue ({
       ],
     },
       
-      color: '#000000',
+      color: '#f4f4f4',
       
     }
   },
@@ -116,13 +118,11 @@ new Vue ({
 
 
 
-    // methods:{
-    //   //Mostrar lista de los precios
-    //   toggleShowPrices () {
-    //     this.showPrices = !this.showPrices
-
-    //     // Convertir el color de background a su formato reverso
-    //     this.color = this.color.split('').reverse().join('')
-    //   }
-    // }
+     methods:{
+      //Mostrar lista de los precios
+      updateColor (color) {
+      //Convertir el color de background a su formato reverso
+      this.color = color || this.color.split('').reverse().join('')
+       }
+   }
 })
