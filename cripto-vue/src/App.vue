@@ -1,12 +1,13 @@
 <template>
   <main>
     <px-header />
-
+    <!-- Aqui se mencionan las vistas de router-->
     <router-view class="container px-5 sm:px-20 py-20 flex justify-center" />
   </main>
 </template>
 
 <script>
+// Se importa la vista de PxHeader para que pueda ser utilizada
 import PxHeader from "@/components/PxHeader";
 
 export default {

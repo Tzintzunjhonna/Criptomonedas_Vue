@@ -6,7 +6,7 @@
       importantes a traves de la API REST de Coincap.
       <br />Este proyecto es utilizado en el curo de Vue.js Basico de Platzi
     </p>
-
+    <!-- Para poder hacer links entre vistas se ocupa el tag router-link-->
     <router-link to="/" class="mt-5 text-xl text-green-600 hover:underline"
       >Volver a la pagina de Inicio</router-link
     >
