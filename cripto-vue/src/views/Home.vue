@@ -1,7 +1,9 @@
 <template>
   <div>
+    <!--Es para ver cargar el circulo-->
+    <bounce-loader :loading="isLoading" :color="'#68d391'" :size="100" />
     <!-- Aqui traemos la vista de px-assets-table exportado debidamente-->
-    <px-assets-table v-bind:assets="assets" />
+    <px-assets-table v-if="!isLoading" :assets="assets" />
   </div>
 </template>
 
@@ -18,13 +20,18 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       assets: [],
     };
   },
 
   // Realizar un hook para interactuar con la api
   created() {
-    api.getAssets().then((assets) => (this.assets = assets));
+    (this.isLoading = true),
+      api
+        .getAssets()
+        .then((assets) => (this.assets = assets))
+        .finally(() => (this.isLoading = false));
   },
 };
 </script>
