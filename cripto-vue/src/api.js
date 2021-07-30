@@ -32,9 +32,24 @@ function getAssetHistory(coin) {
     .then((res) => res.data);
 }
 
+//Funcion para obtener las listas de mercado a moneda particulr
+function getMarkets(coin) {
+  return fetch(`${url}/assets/${coin}/markets?limit=5`)
+    .then((res) => res.json())
+    .then((res) => res.data);
+}
+
+// Funcion para devolver un Exchange en particulaR
+function getExchange(id) {
+  return fetch(`${url}/exchanges/${id}`)
+    .then((res) => res.json())
+    .then((res) => res.data);
+}
 // Exportar lo optenido de getAssets para ocupar en
 export default {
   getAssets,
   getAsset,
   getAssetHistory,
+  getMarkets,
+  getExchange,
 };
